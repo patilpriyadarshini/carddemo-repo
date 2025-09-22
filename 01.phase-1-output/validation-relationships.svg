@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; text-anchor: middle; }
+      .group-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .rule-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; }
+      .dependency-line { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .shared-utility { stroke: #ff6600; stroke-width: 2; stroke-dasharray: 5,5; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="25" class="title">COBOL Business Validation Rules - Relationships and Dependencies</text>
+  
+  <!-- Authentication & Security Group -->
+  <rect x="50" y="50" width="200" height="120" fill="#e6f3ff" stroke="#0066cc" stroke-width="2" rx="5"/>
+  <text x="150" y="70" class="group-title">Authentication &amp; Security</text>
+  <text x="60" y="90" class="rule-text">VAL-001: User ID Required</text>
+  <text x="60" y="105" class="rule-text">VAL-002: Password Required</text>
+  <text x="60" y="120" class="rule-text">VAL-003: Password Authentication</text>
+  <text x="60" y="140" class="rule-text">Programs: COSGN00C</text>
+  <text x="60" y="155" class="rule-text">Triggers: Signon Process</text>
+  
+  <!-- Account Management Group -->
+  <rect x="300" y="50" width="200" height="150" fill="#e6ffe6" stroke="#00cc00" stroke-width="2" rx="5"/>
+  <text x="400" y="70" class="group-title">Account Management</text>
+  <text x="310" y="90" class="rule-text">VAL-004: Account ID Required</text>
+  <text x="310" y="105" class="rule-text">VAL-005: Account Status Y/N</text>
+  <text x="310" y="120" class="rule-text">VAL-006: Balance Non-Negative</text>
+  <text x="310" y="135" class="rule-text">VAL-008: SSN Validation</text>
+  <text x="310" y="150" class="rule-text">VAL-009: Phone Format</text>
+  <text x="310" y="165" class="rule-text">VAL-010: FICO Score Range</text>
+  <text x="310" y="180" class="rule-text">Programs: COBIL00C, COACTUPC</text>
+  
+  <!-- Card Management Group -->
+  <rect x="550" y="50" width="200" height="150" fill="#fff0e6" stroke="#ff6600" stroke-width="2" rx="5"/>
+  <text x="650" y="70" class="group-title">Card Management</text>
+  <text x="560" y="90" class="rule-text">VAL-011: Card Status Y/N</text>
+  <text x="560" y="105" class="rule-text">VAL-012: Expiry Month 1-12</text>
+  <text x="560" y="120" class="rule-text">VAL-013: Expiry Year Range</text>
+  <text x="560" y="135" class="rule-text">VAL-014-019: Card Fields</text>
+  <text x="560" y="150" class="rule-text">Programs: COCRDUPC</text>
+  <text x="560" y="165" class="rule-text">COCRDLIC, COCRDSLC</text>
+  <text x="560" y="180" class="rule-text">Triggers: Card Operations</text>
+  
+  <!-- Transaction Processing Group -->
+  <rect x="800" y="50" width="200" height="180" fill="#ffe6f0" stroke="#cc0066" stroke-width="2" rx="5"/>
+  <text x="900" y="70" class="group-title">Transaction Processing</text>
+  <text x="810" y="90" class="rule-text">VAL-020: Transaction ID Required</text>
+  <text x="810" y="105" class="rule-text">VAL-021-022: Account/Card Numeric</text>
+  <text x="810" y="120" class="rule-text">VAL-023-033: Required Fields</text>
+  <text x="810" y="135" class="rule-text">VAL-034-035: Numeric Codes</text>
+  <text x="810" y="150" class="rule-text">VAL-036: Amount Format</text>
+  <text x="810" y="165" class="rule-text">VAL-037-038: Date Format</text>
+  <text x="810" y="180" class="rule-text">VAL-039: Confirmation Y/N</text>
+  <text x="810" y="195" class="rule-text">Programs: COTRN00C, COTRN01C</text>
+  <text x="810" y="210" class="rule-text">COTRN02C</text>
+  
+  <!-- User Management Group -->
+  <rect x="50" y="250" width="200" height="150" fill="#f0e6ff" stroke="#6600cc" stroke-width="2" rx="5"/>
+  <text x="150" y="270" class="group-title">User Management</text>
+  <text x="60" y="290" class="rule-text">VAL-040-044: User Creation</text>
+  <text x="60" y="305" class="rule-text">VAL-045-049: User Update</text>
+  <text x="60" y="320" class="rule-text">Required: First/Last Name</text>
+  <text x="60" y="335" class="rule-text">User ID, Password, Type</text>
+  <text x="60" y="350" class="rule-text">Programs: COUSR00C, COUSR01C</text>
+  <text x="60" y="365" class="rule-text">COUSR02C, COUSR03C</text>
+  <text x="60" y="380" class="rule-text">Triggers: User CRUD Operations</text>
+  
+  <!-- Date Validation Utilities -->
+  <rect x="300" y="250" width="200" height="120" fill="#f5f5f5" stroke="#333333" stroke-width="2" rx="5"/>
+  <text x="400" y="270" class="group-title">Date Validation Utilities</text>
+  <text x="310" y="290" class="rule-text">VAL-050: CEEDAYS API Validation</text>
+  <text x="310" y="305" class="rule-text">VAL-051: Month Range 1-12</text>
+  <text x="310" y="320" class="rule-text">VAL-052: Day Range 1-31</text>
+  <text x="310" y="335" class="rule-text">VAL-053: February Days 1-28</text>
+  <text x="310" y="350" class="rule-text">Programs: CSUTLDTC, CSUTLDWY</text>
+  
+  <!-- Validation Flow Dependencies -->
+  <text x="600" y="450" class="group-title">Validation Flow Dependencies</text>
+  
+  <!-- Authentication to Account -->
+  <line x1="250" y1="110" x2="300" y2="110" class="dependency-line"/>
+  <text x="260" y="105" class="rule-text">Auth Required</text>
+  
+  <!-- Account to Card -->
+  <line x1="500" y1="125" x2="550" y2="125" class="dependency-line"/>
+  <text x="510" y="120" class="rule-text">Account Context</text>
+  
+  <!-- Card to Transaction -->
+  <line x1="750" y1="125" x2="800" y2="125" class="dependency-line"/>
+  <text x="760" y="120" class="rule-text">Card Context</text>
+  
+  <!-- Account to Transaction (direct) -->
+  <path d="M 400 200 Q 600 250 800 180" class="dependency-line"/>
+  <text x="580" y="240" class="rule-text">Account-based Transactions</text>
+  
+  <!-- Date Utilities to All Groups -->
+  <line x1="400" y1="250" x2="400" y2="200" class="shared-utility"/>
+  <line x1="400" y1="250" x2="650" y2="200" class="shared-utility"/>
+  <line x1="400" y1="250" x2="900" y2="230" class="shared-utility"/>
+  <text x="520" y="400" class="rule-text">Shared Date Validation Utilities</text>
+  
+  <!-- Conditional Validation Flows -->
+  <rect x="550" y="450" width="300" height="200" fill="#fff9e6" stroke="#cc9900" stroke-width="2" rx="5"/>
+  <text x="700" y="470" class="group-title">Conditional Validation Flows</text>
+  
+  <text x="560" y="490" class="rule-text">1. Authentication Success → Account Access</text>
+  <text x="560" y="505" class="rule-text">2. Account Validation → Card Operations</text>
+  <text x="560" y="520" class="rule-text">3. Card Validation → Transaction Processing</text>
+  <text x="560" y="535" class="rule-text">4. Admin User → User Management Access</text>
+  <text x="560" y="550" class="rule-text">5. Account Balance > 0 → Bill Payment</text>
+  <text x="560" y="565" class="rule-text">6. Card Active Status → Transaction Allowed</text>
+  <text x="560" y="580" class="rule-text">7. Date Format Valid → Date Range Check</text>
+  <text x="560" y="595" class="rule-text">8. Field Required → Format Validation</text>
+  <text x="560" y="610" class="rule-text">9. Confirmation Y/N → Action Processing</text>
+  <text x="560" y="625" class="rule-text">10. User Type Valid → Role-based Access</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="450" width="200" height="120" fill="#f9f9f9" stroke="#999" stroke-width="1" rx="3"/>
+  <text x="150" y="470" class="group-title">Legend</text>
+  <line x1="60" y1="485" x2="90" y2="485" class="dependency-line"/>
+  <text x="95" y="490" class="rule-text">Validation Dependencies</text>
+  <line x1="60" y1="505" x2="90" y2="505" class="shared-utility"/>
+  <text x="95" y="510" class="rule-text">Shared Utilities</text>
+  <rect x="60" y="520" width="15" height="10" fill="#e6f3ff" stroke="#0066cc"/>
+  <text x="80" y="530" class="rule-text">Functional Groups</text>
+  <text x="60" y="550" class="rule-text">Total Rules: 66</text>
+  <text x="60" y="565" class="rule-text">Programs: 18 COBOL files</text>
+  
+  <!-- Validation Statistics -->
+  <rect x="900" y="450" width="250" height="200" fill="#f0f8ff" stroke="#4169e1" stroke-width="2" rx="5"/>
+  <text x="1025" y="470" class="group-title">Validation Statistics</text>
+  
+  <text x="910" y="490" class="rule-text">Authentication &amp; Security: 3 rules (5%)</text>
+  <text x="910" y="505" class="rule-text">Account Management: 7 rules (11%)</text>
+  <text x="910" y="520" class="rule-text">Card Management: 12 rules (18%)</text>
+  <text x="910" y="535" class="rule-text">Transaction Processing: 22 rules (33%)</text>
+  <text x="910" y="550" class="rule-text">User Management: 12 rules (18%)</text>
+  <text x="910" y="565" class="rule-text">Date Utilities: 4 rules (6%)</text>
+  <text x="910" y="580" class="rule-text">Menu &amp; Navigation: 3 rules (5%)</text>
+  <text x="910" y="595" class="rule-text">Reporting: 4 rules (6%)</text>
+  
+  <text x="910" y="590" class="rule-text">Most Common Patterns:</text>
+  <text x="910" y="605" class="rule-text">• Required Field Validation (40%)</text>
+  <text x="910" y="620" class="rule-text">• Format Validation (25%)</text>
+  <text x="910" y="635" class="rule-text">• Range/Value Validation (20%)</text>
+  <text x="910" y="650" class="rule-text">• Conditional Logic (15%)</text>
+  
+  <!-- Footer -->
+  <text x="600" y="780" class="rule-text" text-anchor="middle">Generated from CardDemo COBOL Codebase - Business Validation Rules Only</text>
+</svg>
